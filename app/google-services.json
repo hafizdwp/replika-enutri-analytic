@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "492768319644",
+    "firebase_url": "https://replika-enutri-analytics.firebaseio.com",
+    "project_id": "replika-enutri-analytics",
+    "storage_bucket": "replika-enutri-analytics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492768319644:android:b657f571afd8287894f559",
+        "android_client_info": {
+          "package_name": "me.hafizdwp.replika_enutri_analytics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "492768319644-ksmht3pjk44vjrkitnrlidrk30vf1vjc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWpj_iVbhcvK7uFL_oFQv7zUgasbTy4N4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "492768319644-ksmht3pjk44vjrkitnrlidrk30vf1vjc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

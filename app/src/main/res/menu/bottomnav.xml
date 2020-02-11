@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home_white"
+        android:title="Beranda"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/pustaka"
+        android:icon="@drawable/ic_pustaka"
+        android:title="Pustaka"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/alat_bantu"
+        android:icon="@drawable/ic_tools"
+        android:title="Tools"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/epoin"
+        android:icon="@drawable/ic_epoin"
+        android:title="Epoin"
+        app:showAsAction="always" />
+
+</menu>
