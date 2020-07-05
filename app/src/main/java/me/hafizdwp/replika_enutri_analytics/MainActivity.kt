@@ -7,21 +7,25 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import me.hafizdwp.replika_enutri_analytics.ui.EpoinFragment
-import me.hafizdwp.replika_enutri_analytics.ui.HomeFragment
-import me.hafizdwp.replika_enutri_analytics.ui.PustakaFragment
-import me.hafizdwp.replika_enutri_analytics.ui.ToolsFragment
+import me.hafizdwp.replika_enutri_analytics.ui.*
+import me.hafizdwp.replika_enutri_analytics.ui.chat.ChatMenuFragment
 
 class MainActivity : AppCompatActivity() {
 
-    val mFragmentMenuList = listOf<Fragment>(
-            HomeFragment(),
-            PustakaFragment(),
-            ToolsFragment(),
-            EpoinFragment()
+//    val mFragmentMenuList = listOf<Fragment>(
+//            HomeFragment(),
+//            PustakaFragment(),
+//            ToolsFragment(),
+//            EpoinFragment()
+//    )
+
+    private val mFragmentMenuList = listOf<Fragment>(
+        HomeFragment(),
+        ChatMenuFragment(),
+        EpoinFragment()
     )
 
-    var isDoubleBackPressed = false
+    private var isDoubleBackPressed = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,11 +38,17 @@ class MainActivity : AppCompatActivity() {
 
     fun setupBottomNav() {
         bottomNav.setOnNavigationItemSelectedListener {
+//            when (it.itemId) {
+//                R.id.home -> selectFragment(mFragmentMenuList[0])
+//                R.id.pustaka -> selectFragment(mFragmentMenuList[1])
+//                R.id.alat_bantu -> selectFragment(mFragmentMenuList[2])
+//                R.id.epoin -> selectFragment(mFragmentMenuList[3])
+//            }
+
             when (it.itemId) {
                 R.id.home -> selectFragment(mFragmentMenuList[0])
-                R.id.pustaka -> selectFragment(mFragmentMenuList[1])
-                R.id.alat_bantu -> selectFragment(mFragmentMenuList[2])
-                R.id.epoin -> selectFragment(mFragmentMenuList[3])
+                R.id.chat -> selectFragment(mFragmentMenuList[1])
+                R.id.epoin -> selectFragment(mFragmentMenuList[2])
             }
 
             return@setOnNavigationItemSelectedListener true
@@ -47,13 +57,14 @@ class MainActivity : AppCompatActivity() {
         selectFragment(mFragmentMenuList[0])
     }
 
-    fun selectFragment(fragment: Fragment) {
+    private fun selectFragment(fragment: Fragment) {
 
         val tag = when (fragment) {
             is HomeFragment -> HomeFragment::class.java.simpleName
             is PustakaFragment -> PustakaFragment::class.java.simpleName
             is ToolsFragment -> ToolsFragment::class.java.simpleName
             is EpoinFragment -> EpoinFragment::class.java.simpleName
+            is ChatMenuFragment -> ChatMenuFragment::class.java.simpleName
             else -> ""
         }
 
@@ -76,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         handleBackPressed()
     }
 
-    fun handleBackPressed() {
+    private fun handleBackPressed() {
         when {
             bottomNav.selectedItemId != R.id.home -> bottomNav.selectedItemId = R.id.home
             bottomNav.selectedItemId == R.id.home -> checkIsDoublePressed()
